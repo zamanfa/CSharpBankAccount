@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.Design;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using System.ComponentModel.Design;
 
 namespace BankAccountLibrary
 {
     public class Account
     {
         private string Name = "Default Account";
+        private Name name;
         private decimal Balance = 0.0m;
         private string accountNumber = "000000";
 
@@ -14,7 +16,14 @@ namespace BankAccountLibrary
             this.Balance = Balance;
             this.accountNumber = accountNumber;
         }
-        
+
+        public Account(Name name, decimal balance, string accountNumber)
+        {
+            this.name = name;
+            Balance = balance;
+            this.accountNumber = accountNumber;
+        }
+
         public string AccountName
         {
             set
